@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hailua.grpc</groupId>
+
+    <name>gRPC - Sandbox</name>
+    <artifactId>grpc-sandbox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>grpc-sandbox-server</module>
+        <module>grpc-sandbox-client</module>
+        <module>grpc-sandbox-api</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+
+        <!-- PROTOBUF -->
+        <protobuf.version>3.24.0</protobuf.version>
+
+        <!-- gRPC -->
+        <grpc.version>1.60.0</grpc.version>
+
+        <!-- GUAVA -->
+        <guava.version>33.0.0-jre</guava.version>
+
+        <!-- TOMCAT -->
+        <tomcat.version>6.0.53</tomcat.version>
+
+        <!-- MAVEN -->
+        <maven.dependency.version>3.6.1</maven.dependency.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SANBDOX -->
+            <dependency>
+                <groupId>com.hailua.intro</groupId>
+                <artifactId>grpc-sandbox-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- GUAVA -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- gRPC -->
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty-shaded</artifactId>
+                <version>${grpc.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-api</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <!-- PROTOBUF -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+
+            <!-- TOMCAT ANNOTATIONS -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>annotations-api</artifactId>
+                <version>${tomcat.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven.dependency.version}</version>
+                <executions>
+                    <execution>
+                        <id>analyze</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>analyze-only</goal>
+                        </goals>
+                        <configuration>
+                            <failOnWarning>true</failOnWarning>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
