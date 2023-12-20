@@ -10,7 +10,7 @@ public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImpl
     public void greeting(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
         System.out.println(request);
         responseObserver.onNext(HelloResponse.newBuilder()
-                        .setGreeting("Hello, " + request.getFirstname() + "!")
+                .setGreeting("Hello, " + request.getFirstname() + "!")
                 .build());
         responseObserver.onCompleted();
     }

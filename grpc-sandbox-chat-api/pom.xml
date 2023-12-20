@@ -8,8 +8,8 @@
     </parent>
 
     <groupId>com.hailua.intro</groupId>
-    <artifactId>grpc-sandbox-api</artifactId>
-    <name>gRPC - Sandbox - API</name>
+    <artifactId>grpc-sandbox-chat-api</artifactId>
+    <name>gRPC - Sandbox - Chat - API</name>
 
     <dependencies>
         <!-- gRPC -->
@@ -24,12 +24,6 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-api</artifactId>
-        </dependency>
-
-        <!-- GUAVA -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
         </dependency>
 
         <!-- PROTOBUF -->

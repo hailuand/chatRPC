@@ -6,15 +6,23 @@
         <artifactId>grpc-sandbox</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>grpc-sandbox-server</artifactId>
 
-    <name>gRPC - Sandbox - Server</name>
+    <groupId>com.hailua.intro</groupId>
+    <artifactId>grpc-sandbox-chat-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>gRPC - Sandbox - Chat - Server</name>
 
     <dependencies>
         <!-- SANDBOX -->
         <dependency>
             <groupId>com.hailua.intro</groupId>
-            <artifactId>grpc-sandbox-api</artifactId>
+            <artifactId>grpc-sandbox-chat-api</artifactId>
+        </dependency>
+
+        <!-- PROTOBUF -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
         </dependency>
 
         <!-- gRPC -->

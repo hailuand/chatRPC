@@ -6,25 +6,36 @@
         <artifactId>grpc-sandbox</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>grpc-sandbox-server</artifactId>
 
-    <name>gRPC - Sandbox - Server</name>
+    <groupId>com.hailua.intro</groupId>
+    <artifactId>grpc-sandbox-chat-client</artifactId>
+    <name>gRPC - Sandbox - Chat - Client</name>
+
+    <properties>
+        <java.fx.version>21.0.1</java.fx.version>
+    </properties>
 
     <dependencies>
         <!-- SANDBOX -->
         <dependency>
             <groupId>com.hailua.intro</groupId>
-            <artifactId>grpc-sandbox-api</artifactId>
+            <artifactId>grpc-sandbox-chat-api</artifactId>
+        </dependency>
+
+        <!-- PROTOBUF -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
         </dependency>
 
         <!-- gRPC -->
         <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-stub</artifactId>
+            <artifactId>grpc-api</artifactId>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-api</artifactId>
+            <artifactId>grpc-stub</artifactId>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
